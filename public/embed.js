@@ -45,7 +45,7 @@
   window.TastyBitesChatbot = true;
 
   const iframe = document.createElement("iframe");
-  iframe.src = "https://yourdomain.com/chat";
+  iframe.src = "https://restaurant-chatbot-seven.vercel.app/chat";
   iframe.style.position = "fixed";
   iframe.style.bottom = "20px";
   iframe.style.right = "20px";
