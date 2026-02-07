@@ -58,18 +58,34 @@ export default function App() {
     }
   };
 
+  const closeChat = () => {
+    window.parent.postMessage("CLOSE_CHAT", "*");
+  };
+
   return (
     <div className="h-screen flex items-center justify-center bg-gradient-to-br bg-white py-2">
       <div className="h-full flex flex-col bg-gradient-to-br from-gray-50 to-gray-100 md:w-[500px] w-full shadow-xl shadow-green-200">
         {/* Header */}
-        <header className="sticky top-0 z-10 bg-green-600 text-white px-6 py-4 shadow-md flex items-center gap-3">
-          <div className="h-9 w-9 rounded-full bg-white/20 flex items-center justify-center text-lg">
-            🍽️
+        <header className="sticky top-0 z-10 bg-green-600 text-white px-6 py-4 shadow-md flex items-center justify-between">
+          {/* Left: Branding */}
+          <div className="flex items-center gap-3">
+            <div className="h-9 w-9 rounded-full bg-white/20 flex items-center justify-center text-lg">
+              🍽️
+            </div>
+            <div>
+              <h1 className="font-semibold leading-tight">Tasty Bites</h1>
+              <p className="text-xs opacity-80">AI Restaurant Assistant</p>
+            </div>
           </div>
-          <div>
-            <h1 className="font-semibold leading-tight">Tasty Bites</h1>
-            <p className="text-xs opacity-80">AI Restaurant Assistant</p>
-          </div>
+
+          {/* Right: Close button */}
+          <button
+            onClick={() => window.parent.postMessage("CLOSE_CHAT", "*")}
+            className="text-2xl leading-none hover:opacity-80 transition"
+            aria-label="Close chat"
+          >
+            ×
+          </button>
         </header>
 
         {/* Messages */}
