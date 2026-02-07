@@ -6,7 +6,7 @@
   // Create iframe
   const iframe = document.createElement("iframe");
 
-  iframe.src = "https://yourdomain.com/chat"; // your Next.js chatbot page
+  iframe.src = "https://restaurant-chatbot-seven.vercel.app/chat"; // your Next.js chatbot page
   iframe.style.position = "fixed";
   iframe.style.bottom = "20px";
   iframe.style.right = "20px";
